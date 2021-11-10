@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="header">
+    <h1>Restaurants <span><i class="fab fa-yelp" style="color: red"></i></span></h1>
+    <%= link_to "Add new restaurant", new_restaurant_path, class: "btn btn-danger" %>
+  </div>
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant) do %>
+      <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1602253057119-44d745d9b860?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1452&q=80" alt="restaurant">
+        <div class="card-product-infos">
+          <h2><%= restaurant.name %></h2>
+            <h4><%= restaurant.category.capitalize %></h4></li>
+            <p><%= restaurant.address %></p>
+            <p><%= restaurant.phone_number %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
